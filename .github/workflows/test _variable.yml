@@ -1,0 +1,31 @@
+name: testing variables
+on:
+  push:
+   branches: main
+  pull_request:
+    branches: main
+  workflow_dispatch: 
+   inputs:
+    number1:
+      description: enter number 1
+      default: '0'
+      required: true
+env:
+  a: 2;
+
+jobs:
+  test:
+   runs-on: ubuntu-latest
+  env:
+    b: 'available for job1'
+  steps:
+    - name: testing
+     run:|
+       echo  "a value is :$a"
+       echo "$number1"
+
+      
+   
+  
+ 
+
